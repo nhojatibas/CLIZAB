@@ -19,14 +19,17 @@ from zabbix_functions import *
 from datetime import datetime, date, time
 import time as t
 
-
-# Constantes
-vServer = "http://monitor.ciasc.gov.br"
-vUserName = "nholiveira@ciasc.sc.gov.br"
-vPassword = ""
-
 _vermelho = GdkPixbuf.Pixbuf.new_from_file("vermelho.png")
 _verde = GdkPixbuf.Pixbuf.new_from_file("verde.png")
+
+# Carregando do arquivo de credenciais
+_cred=open("cred.user")
+for _cred_user in _cred:
+	vServer=str(_cred_user.split(",")[0])
+	vUserName=str(_cred_user.split(",")[1])
+	vPassword=_cred_user.split(",")[2]
+
+print vServer, vUserName, vPassword
 
 ####################################onButtonSearch_clicked
 # Abrindo a sessão com o servidor zabbix
