@@ -253,9 +253,13 @@ class _cliza_sub:
 
 #			print _host_id, _host_name[0]['name'], _host_ip[0]['ip'], _host_templates
 #			print "template", _host_templates
-			
-			_host_agentversion=_host_itens[0]['lastvalue']  # se mudar os itens, isso aqui deve ser mudado tbém - ATENÇÃO
-			_host_pingvalue=_host_itens[1]['lastvalue']
+			print _host_ip, _host_itens, "tamanho:", len(_host_itens)
+			if len(_host_itens) > 1:
+				_host_agentversion=_host_itens[0]['lastvalue']  # se mudar os itens, isso aqui deve ser mudado tbém - ATENÇÃO
+				_host_pingvalue=_host_itens[1]['lastvalue']
+			else: 
+				_host_agentversion=""
+				_host_pingvalue=""
 
 #			print "Versao agente:",_host_agentversion
 #			print "Status PING  :",_host_pingvalue
