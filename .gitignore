@@ -1,0 +1,6 @@
+# Ignorar arquivos:
+cred.user
+cred.user-projetomonitor
+cred.user-vmonitor
+zabbix_functions.pyc
+
